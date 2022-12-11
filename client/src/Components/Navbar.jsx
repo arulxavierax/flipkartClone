@@ -21,14 +21,8 @@ function Navbar() {
   const [display, setDisplay] = useState("none");
 
   return (
-    <>
-      <Flex
-        justifyContent={"space-around"}
-        bgColor={"#2874f0"}
-        width={"100%"}
-        pos={"fixed"}
-        p={1}
-      >
+    <Box position={"fixed"} w={"100%"} zIndex={1}>
+      <Flex justifyContent={"space-around"} bgColor={"#2874f0"}>
         <Center>
           <Image
             height={["5", "10", "20"]}
@@ -77,10 +71,10 @@ function Navbar() {
             </Text>
           </Center>
         </Flex>
-        <Center display={["flex", "flex", "none"]}>
+        <Center p={2} display={["flex", "flex", "none"]}>
           <IconButton
             aria-label="open-menu"
-            size={["md", "lg"]}
+            size={"md"}
             icon={<HamburgerIcon />}
             onClick={() => setDisplay("flex")}
           />
@@ -96,8 +90,6 @@ function Navbar() {
         top="0"
         left={"0"}
         flexDir={"column"}
-        // marginTop="200px"
-        // align="center"
         overflow={"auto"}
         display={display}
       >
@@ -132,7 +124,7 @@ function Navbar() {
           </Text>
         </Flex>
       </Flex>
-    </>
+    </Box>
   );
 }
 
