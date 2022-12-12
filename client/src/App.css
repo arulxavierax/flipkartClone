@@ -34,12 +34,12 @@
 
 .slide {
   opacity: 0;
-  transition-duration: 1s ease;
+  transition-duration: 3s ease;
 }
 
 .slide.active {
   opacity: 1;
-  transition-duration: 1s;
+  transition-duration: 3s;
   transform: scale(1);
 }
 
@@ -53,4 +53,13 @@
   font-size: 12px;
   color: #fff;
   padding-bottom: 5px;
+}
+
+.productList {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.singlep {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }

@@ -12,14 +12,24 @@ import {
   Text,
   Icon,
   IconButton,
+  useColorMode,
+  MenuButton,
+  Menu,
+  MenuItem,
+  MenuList,
 } from "@chakra-ui/react";
-import { Search2Icon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import {
+  Search2Icon,
+  HamburgerIcon,
+  CloseIcon,
+  ChevronDownIcon,
+} from "@chakra-ui/icons";
 import { BsCartDash } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const [display, setDisplay] = useState("none");
-
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box position={"fixed"} w={"100%"} zIndex={1}>
       <Flex justifyContent={"space-around"} bgColor={"#2874f0"}>
@@ -60,9 +70,20 @@ function Navbar() {
             </Text>
           </Center>
           <Center>
-            <Text fontSize="16px" as="b" color={"white"}>
-              <Link to="#">More</Link>
-            </Text>
+            <Menu>
+              <MenuButton>
+                <Text fontSize="16px" as="b" color={"white"}>
+                  More {<ChevronDownIcon />}
+                </Text>
+              </MenuButton>
+              <MenuList>
+                <MenuItem>
+                  <Text onClick={toggleColorMode}>
+                    Dark mode {colorMode === "light" ? "Dark" : "Light"}
+                  </Text>
+                </MenuItem>
+              </MenuList>
+            </Menu>
           </Center>
           <Center>
             <Text fontSize="16px" as="b" color={"white"}>
@@ -114,9 +135,20 @@ function Navbar() {
             <Link to="#">Become a Seller</Link>
           </Text>
 
-          <Text m={2} fontSize="16px" as="b">
-            <Link to="#">More</Link>
-          </Text>
+          <Menu>
+            <MenuButton>
+              <Text m={2} fontSize="16px" as="b">
+                More {<ChevronDownIcon />}
+              </Text>
+            </MenuButton>
+            <MenuList>
+              <MenuItem>
+                <Text onClick={toggleColorMode}>
+                  Dark mode {colorMode === "light" ? "Dark" : "Light"}
+                </Text>
+              </MenuItem>
+            </MenuList>
+          </Menu>
 
           <Text m={2} fontSize="16px" as="b">
             <Flex>

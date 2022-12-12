@@ -3,10 +3,22 @@ import { useState } from "react";
 import { SliderData } from "./Imagedata";
 import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 import "../App.css";
+import { useEffect } from "react";
 
 function ImageCarousel({ slider }) {
   const [current, setCurrent] = useState(0);
   const length = slider.length;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (current == length - 1) {
+        setCurrent(0);
+      } else {
+        setCurrent(current + 1);
+      }
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [current]);
 
   const nextSlide = () => {
     setCurrent(current == length - 1 ? 0 : current + 1);

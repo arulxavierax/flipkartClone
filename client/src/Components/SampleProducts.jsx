@@ -26,99 +26,61 @@ function SampleProducts() {
   const [light, setLight] = useState([]);
 
   useEffect(() => {
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=smartphones"
-    ).then((res) => {
+    getSampleProducts("smartphones").then((res) => {
       setSmartphones(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=laptops"
-    ).then((res) => {
+    getSampleProducts("laptops").then((res) => {
       setLaptops(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=fragrances"
-    ).then((res) => {
+    getSampleProducts("fragrances").then((res) => {
       setFragrances(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=skincare"
-    ).then((res) => {
+    getSampleProducts("skincare").then((res) => {
       setSkincare(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=groceries"
-    ).then((res) => {
+    getSampleProducts("groceries").then((res) => {
       setGroceries(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=home-decoration"
-    ).then((res) => {
+    getSampleProducts("home-decoration").then((res) => {
       setHomedecore(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=furniture"
-    ).then((res) => {
+    getSampleProducts("furniture").then((res) => {
       setFurniture(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=tops"
-    ).then((res) => {
+    getSampleProducts("tops").then((res) => {
       setTop(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=womens-dresses"
-    ).then((res) => {
+    getSampleProducts("womens-dresses").then((res) => {
       setWomenDress(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=mens-shirts"
-    ).then((res) => {
+    getSampleProducts("mens-shirts").then((res) => {
       setMenShirts(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=mens-shoes"
-    ).then((res) => {
+    getSampleProducts("mens-shoes").then((res) => {
       setMenShoes(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=mens-watches"
-    ).then((res) => {
+    getSampleProducts("mens-watches").then((res) => {
       setMenWatches(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=womens-watches"
-    ).then((res) => {
+    getSampleProducts("womens-watches").then((res) => {
       setWomenWatches(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=womens-bags"
-    ).then((res) => {
+    getSampleProducts("womens-bags").then((res) => {
       setWomenBags(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=womens-jewellery"
-    ).then((res) => {
+    getSampleProducts("womens-jewellery").then((res) => {
       setWomenJewellery(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=sunglasses"
-    ).then((res) => {
+    getSampleProducts("sunglasses").then((res) => {
       setSunglasses(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=automotive"
-    ).then((res) => {
+    getSampleProducts("automotive").then((res) => {
       setAutomotive(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=motorcycle"
-    ).then((res) => {
+    getSampleProducts("motorcycle").then((res) => {
       setMotor(res.data);
     });
-    getSampleProducts(
-      "https://flipkartbackend-production.up.railway.app/products/category?filter=lighting"
-    ).then((res) => {
+    getSampleProducts("lighting").then((res) => {
       setLight(res.data);
     });
   }, []);

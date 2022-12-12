@@ -34,7 +34,7 @@ function ProductsSample({ catergory, data }) {
         </GridItem>
         {data?.map((e) => (
           <Link key={e._id} to={`/products/${e._id}`}>
-            <GridItem >
+            <GridItem>
               <Image
                 margin={"auto"}
                 boxSize="80%"

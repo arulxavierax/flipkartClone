@@ -1,5 +1,7 @@
 import axios from "axios";
 
-export const getSampleProducts = (url) => {
-  return axios.get(url);
+export const getSampleProducts = (endpoint) => {
+  return axios.get(
+    `https://flipkartbackend-production.up.railway.app/products/category?filter=${endpoint}`
+  );
 };
