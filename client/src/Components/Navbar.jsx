@@ -24,7 +24,7 @@ import {
   CloseIcon,
   ChevronDownIcon,
 } from "@chakra-ui/icons";
-import { BsCartDash } from "react-icons/bs";
+import { BsCartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -87,8 +87,8 @@ function Navbar() {
           </Center>
           <Center>
             <Text fontSize="16px" as="b" color={"white"}>
-              <Flex>
-                <BsCartDash fontSize={"20px"} />
+              <Flex gap={2}>
+                <BsCartFill fontSize={"20px"} />
                 <Link to="#"> Cart </Link>
               </Flex>
             </Text>
@@ -152,7 +152,7 @@ function Navbar() {
 
           <Text m={2} fontSize="16px" as="b">
             <Flex>
-              <BsCartDash fontSize={"20px"} />
+              <BsCartFill fontSize={"20px"} />
               <Link to="#"> Cart </Link>
             </Flex>
           </Text>

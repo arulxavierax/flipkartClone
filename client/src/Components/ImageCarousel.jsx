@@ -33,7 +33,7 @@ function ImageCarousel({ slider }) {
   }
 
   return (
-    <Box className="slider">
+    <Box width={"100%"} height="250px" className="slider">
       <ArrowLeftIcon className="left-arrow" onClick={nextSlide} />
       <ArrowRightIcon className="right-arrow" onClick={prevSlide} />
       {SliderData.map((e, i) => (

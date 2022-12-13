@@ -22,6 +22,8 @@ function Products() {
 
   useEffect(() => {
     dispatch(getAllProducts());
+    document.title =
+      "Content Store Online - Buy Content Online at Best Price in India";
   }, [dispatch]);
 
   if (loading) {
@@ -49,7 +51,7 @@ function Products() {
           <Link to={`/products/${e._id}`}>
             <GridItem className="singlep" p={10} key={e._id}>
               <Box>
-                <Image margin={"auto"} src={e.thumbnail} />
+                <Image loading="lazy" margin={"auto"} src={e.thumbnail} />
               </Box>
               <Box className="productList">
                 <Text fontSize={"18px"} fontWeight={500} cursor="pointer">

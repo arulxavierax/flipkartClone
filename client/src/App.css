@@ -63,3 +63,31 @@
 .singlep {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+.cartButton {
+  cursor: pointer;
+  border-radius: 2px;
+  font-weight: 500;
+  padding: 20px 20px;
+  font-size: 16px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+  color: white;
+  background-color: #ff9f00;
+  margin: auto;
+  display: flex;
+  gap: 2;
+}
+
+.buyButton {
+  cursor: pointer;
+  border-radius: 2px;
+  font-weight: 500;
+  padding: 20px 20px;
+  font-size: 16px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 20%);
+  color: white;
+  background-color: #fb641b;
+  margin: auto;
+  display: flex;
+  gap: 2;
+}
