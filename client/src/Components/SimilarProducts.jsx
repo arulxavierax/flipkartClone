@@ -1,56 +1,41 @@
 import {
   Badge,
   Box,
-  Center,
   Flex,
   Grid,
   GridItem,
-  Highlight,
   Image,
-  Spinner,
   Text,
 } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { getAllProducts } from "../Store/products/products.action";
+import axios from "axios";
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { AiFillStar } from "react-icons/ai";
-import Pagination from "../Components/Pagination";
+import { Link } from "react-router-dom";
 
-function Products() {
-  const dispatch = useDispatch();
-  const { error, loading, data } = useSelector((store) => store.products);
-  const [page, setPage] = useState(1);
-
+function SimilarProducts({ category }) {
+  const [data, setData] = useState([]);
   useEffect(() => {
-    dispatch(getAllProducts(page));
-    document.title =
-      "Content Store Online - Buy Content Online at Best Price in India";
-  }, [dispatch, page]);
-
-  if (loading) {
-    return (
-      <Center h="500px">
-        <Spinner
-          thickness="4px"
-          speed="0.65s"
-          emptyColor="gray.200"
-          color="blue.500"
-          size="xl"
-        />
-      </Center>
-    );
-  }
+    axios
+      .get(
+        `https://flipkartbackend-production.up.railway.app/products/category?filter=${category}&limit=5`
+      )
+      .then((res) => {
+        setData(res.data);
+      });
+  }, []);
 
   return (
-    <Box paddingTop={85} paddingBottom={85}>
+    <Box mt={50}>
+      <Text fontSize={"22px"} fontWeight={500} paddingLeft="20px">
+        Similar products
+      </Text>
       <Grid
-        templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]}
-        gap={5}
-        p={2}
+        templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(5, 1fr)"]}
       >
-        {data.map((e) => (
-          <Link key={e._id} to={`/products/${e._id}`}>
+        {data?.map((e) => (
+          <Link _blank key={e._id} to={`/products/${e._id}`}>
             <GridItem className="singlep" p={10}>
               <Box>
                 <Image margin={"auto"} src={e.thumbnail} />
@@ -94,25 +79,12 @@ function Products() {
                   {e.discountPercentage}% off
                 </Text>
               </Flex>
-              <Box className="productList">
-                <Text fontSize={"12px"} fontWeight={400}>
-                  Free delivery
-                </Text>
-              </Box>
-              <Flex gap={1} className="productList">
-                <Text fontSize={"12px"}>Upto</Text>
-                <Text fontWeight="bold" fontSize={"12px"}>
-                  ₹400
-                </Text>
-                <Text fontSize={"12px"}>Off on Exchange</Text>
-              </Flex>
             </GridItem>
           </Link>
         ))}
       </Grid>
-      <Pagination current={page} total={5} onChange={(e) => setPage(e)} />
     </Box>
   );
 }
 
-export default Products;
+export default SimilarProducts;

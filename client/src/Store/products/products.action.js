@@ -5,10 +5,12 @@ import {
   GET_ALLPRODUCTS_SUCCESS,
 } from "./products.type";
 
-export const getAllProducts = () => (dispatch) => {
+export const getAllProducts = (page) => (dispatch) => {
   dispatch({ type: GET_ALLPRODUCTS_LOADING });
   axios
-    .get("https://flipkartbackend-production.up.railway.app/products?limit=100")
+    .get(
+      `https://flipkartbackend-production.up.railway.app/products?limit=20&page=${page}`
+    )
     .then((res) => {
       dispatch({
         type: GET_ALLPRODUCTS_SUCCESS,

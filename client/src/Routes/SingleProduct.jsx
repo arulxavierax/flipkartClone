@@ -14,6 +14,7 @@ import { useParams } from "react-router-dom";
 import { getSingleProduct } from "../Store/singleProduct/singleProduct.action";
 import { BsCartFill, BsLightningFill } from "react-icons/bs";
 import SingleProductDetails from "../Components/SingleProductDetails";
+import SimilarProducts from "../Components/SimilarProducts";
 
 function SingleProduct() {
   const { id } = useParams();
@@ -43,39 +44,42 @@ function SingleProduct() {
   }
 
   return (
-    <Flex
-      direction={["column", "column", "row", "row"]}
-      paddingTop={75}
-      gap={5}
-    >
-      <Flex width={["100%", "100%", "50%"]} padding={10} gap={5}>
-        <SimpleGrid columns={1}>
+    <Box>
+      <Flex
+        direction={["column", "column", "row", "row"]}
+        paddingTop={75}
+        gap={5}
+      >
+        <Flex width={["100%", "100%", "50%"]} padding={10} gap={5}>
+          <SimpleGrid columns={1}>
+            <Box>
+              {images.map((e, i) => (
+                <Image
+                  marginBottom={2}
+                  src={e}
+                  onClick={() => setMainImage(i)}
+                  boxSize="50px"
+                  border={mainImage === i ? "2px solid blue" : "none"}
+                />
+              ))}
+            </Box>
+          </SimpleGrid>
           <Box>
-            {images.map((e, i) => (
-              <Image
-                marginBottom={2}
-                src={e}
-                onClick={() => setMainImage(i)}
-                boxSize="50px"
-                border={mainImage === i ? "2px solid blue" : "none"}
-              />
-            ))}
+            <Image width={"100%"} src={images[mainImage]} />
+            <Box width={"80%"} margin="auto" marginTop={5} display={"flex"}>
+              <Text className="cartButton">
+                <BsCartFill fontSize={"20px"} /> ADD TO CART
+              </Text>
+              <Text className="buyButton">
+                <BsLightningFill fontSize={"20px"} /> BUY NOW
+              </Text>
+            </Box>
           </Box>
-        </SimpleGrid>
-        <Box>
-          <Image width={"100%"} src={images[mainImage]} />
-          <Box width={"80%"} margin="auto" marginTop={5} display={"flex"}>
-            <Text className="cartButton">
-              <BsCartFill fontSize={"20px"} /> ADD TO CART
-            </Text>
-            <Text className="buyButton">
-              <BsLightningFill fontSize={"20px"} /> BUY NOW
-            </Text>
-          </Box>
-        </Box>
+        </Flex>
+        <SingleProductDetails data={data} />
       </Flex>
-      <SingleProductDetails data={data} />
-    </Flex>
+      <SimilarProducts category={data.category} />
+    </Box>
   );
 }
 

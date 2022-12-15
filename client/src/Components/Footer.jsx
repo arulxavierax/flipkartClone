@@ -4,7 +4,7 @@ import "../App.css";
 
 function Footer() {
   return (
-    <Box color={"white"} bgColor={"#172337"} p={10}>
+    <Box width={"100%"} color={"white"} bgColor={"#172337"} p={10}>
       <SimpleGrid columns={[1, 1, 2]}>
         <Flex gap={10}>
           <Box>
