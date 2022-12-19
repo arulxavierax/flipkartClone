@@ -125,6 +125,101 @@ function SingleProductDetails({ data }) {
             </Highlight>
           </Box>
         </Flex>
+        <Flex mt={10} gap={10}>
+          <Box>
+            <Text fontSize={"14px"} fontWeight={500} color="#878787">
+              Delivery
+            </Text>
+          </Box>
+          <Flex gap={2}>
+            <Text fontSize={"14px"} fontWeight={500}>
+              Delivery within 1 Week |
+            </Text>
+            <Text as="del" fontSize={"14px"} color="#878787" fontWeight={500}>
+              Free ₹40
+            </Text>
+          </Flex>
+        </Flex>
+        <Flex mt={10} gap={10}>
+          <Box>
+            <Text fontSize={"14px"} fontWeight={500} color="#878787">
+              Highlights
+            </Text>
+          </Box>
+          <Box>
+            <li fontSize={"14px"} fontWeight={500}>
+              {data.brand}
+            </li>
+            <li fontSize={"14px"} fontWeight={500}>
+              {data.title}
+            </li>
+            <li fontSize={"14px"} fontWeight={500}>
+              {data.description}
+            </li>
+            <li fontSize={"14px"} fontWeight={500}>
+              {data.category}
+            </li>
+          </Box>
+        </Flex>
+        <Flex mt={10} gap={10}>
+          <Box>
+            <Text fontSize={"14px"} fontWeight={500} color="#878787">
+              Easy Payments Options
+            </Text>
+          </Box>
+          <Box>
+            <li fontSize={"14px"} fontWeight={500}>
+              EMI starting from ₹323/month
+            </li>
+            <li fontSize={"14px"} fontWeight={500}>
+              Cash on Delivery
+            </li>
+            <li fontSize={"14px"} fontWeight={500}>
+              Net banking & Credit/ Debit/ ATM card
+            </li>
+            <Text
+              color={"#2874f0"}
+              fontSize="14px"
+              cursor={"pointer"}
+              fontWeight={500}
+            >
+              View Details
+            </Text>
+          </Box>
+        </Flex>
+        <Flex mt={10} gap={10}>
+          <Box>
+            <Text fontSize={"14px"} fontWeight={500} color="#878787">
+              Seller
+            </Text>
+          </Box>
+          <Box>
+            <Text mb={2} fontSize={"14px"} fontWeight={500} color="#2874f0">
+              SmartBigShop4
+            </Text>
+            <li
+              mb={2}
+              as="del"
+              fontSize={"14px"}
+              color="#878787"
+              fontWeight={500}
+            >
+              7 Days Replacement Policy
+            </li>
+            <Text
+              mt={2}
+              color={"#2874f0"}
+              fontSize="14px"
+              cursor={"pointer"}
+              fontWeight={500}
+            >
+              See other sellers
+            </Text>
+          </Box>
+        </Flex>
+        <Box mt={10} ml={3}>
+          <Image src="https://rukminim1.flixcart.com/lockin/400/424/images/CCO__PP_2019-07-14.png?q=50" />
+        </Box>
       </Box>
     </Center>
   );

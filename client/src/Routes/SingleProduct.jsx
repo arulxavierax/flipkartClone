@@ -26,7 +26,7 @@ function SingleProduct() {
 
   useEffect(() => {
     dispatch(getSingleProduct(id));
-  }, [dispatch]);
+  }, [dispatch, id]);
   document.title = `${data.title}`;
 
   if (loading) {
