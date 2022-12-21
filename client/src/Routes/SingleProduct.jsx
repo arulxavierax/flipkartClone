@@ -55,6 +55,7 @@ function SingleProduct() {
             <Box>
               {images.map((e, i) => (
                 <Image
+                key={i}
                   marginBottom={2}
                   src={e}
                   onClick={() => setMainImage(i)}

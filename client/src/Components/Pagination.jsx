@@ -35,7 +35,7 @@ function Pagination({ total, current, onChange }) {
       style={
         current == i + 1
           ? { backgroundColor: "#2874F0", color: "white", borderRadius: "50%" }
-          : {}
+          : { borderRadius: "50%" }
       }
       onClick={() => onChange(i + 1)}
     >

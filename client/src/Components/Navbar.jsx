@@ -26,6 +26,7 @@ import {
 } from "@chakra-ui/icons";
 import { BsCartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import Login from "./Login";
 
 function Navbar() {
   const [display, setDisplay] = useState("none");
@@ -61,7 +62,7 @@ function Navbar() {
           justifyContent={"space-between"}
         >
           <Center>
-            <Button borderRadius={"0px"}>Login</Button>
+            <Login />
           </Center>
           <Center>
             <Text fontSize="16px" as="b" color={"white"}>
