@@ -6,9 +6,9 @@ This is a clone of a website called Flipksrt which sell variety of products. it 
 
 [Backend Deployed Link](https://flipkartbackend-production.up.railway.app/)
 
-[Backened Github Repository](https://github.com/arulxavierax/mock15Backend)
+[Backend Github Repository](https://github.com/arulxavierax/mock15Backend)
 
-## UI Mockup
+## Pages
 
 1. HomePage
 ![Screenshot (36)](https://user-images.githubusercontent.com/103952018/221892095-1d1f5c59-ae45-4826-8dbf-28df5356c289.png)
