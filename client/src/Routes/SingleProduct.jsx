@@ -6,17 +6,24 @@ import {
   SimpleGrid,
   Spinner,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import "../App.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getSingleProduct } from "../Store/singleProduct/singleProduct.action";
+import {
+  getSingleProduct,
+  productAddCart,
+  productAddFavourite,
+} from "../Store/singleProduct/singleProduct.action";
 import { BsCartFill, BsLightningFill } from "react-icons/bs";
+import { GrFavorite } from "react-icons/gr";
 import SingleProductDetails from "../Components/SingleProductDetails";
 import SimilarProducts from "../Components/SimilarProducts";
 
 function SingleProduct() {
+  const toast = useToast();
   const { id } = useParams();
   const dispatch = useDispatch();
   const { loading, error, data, images } = useSelector(
@@ -43,6 +50,34 @@ function SingleProduct() {
     );
   }
 
+  const handleCart = () => {
+    let data = dispatch(productAddCart(id))
+      .then((res) =>
+        toast({
+          title: [res],
+          position: "top-right",
+          variant: "left-accent",
+          duration: 9000,
+          isClosable: true,
+        })
+      )
+      .catch((err) => console.log(err));
+  };
+
+  const handleFavorite = () => {
+    dispatch(productAddFavourite(id))
+      .then((res) =>
+        toast({
+          title: [res],
+          position: "top-right",
+          variant: "left-accent",
+          duration: 9000,
+          isClosable: true,
+        })
+      )
+      .catch((err) => console.log(err));
+  };
+
   return (
     <Box>
       <Flex
@@ -55,7 +90,7 @@ function SingleProduct() {
             <Box>
               {images.map((e, i) => (
                 <Image
-                key={i}
+                  key={i}
                   marginBottom={2}
                   src={e}
                   onClick={() => setMainImage(i)}
@@ -68,13 +103,18 @@ function SingleProduct() {
           <Box>
             <Image width={"100%"} src={images[mainImage]} />
             <Box width={"80%"} margin="auto" marginTop={5} display={"flex"}>
-              <Text className="cartButton">
+              <Text onClick={handleCart} className="cartButton">
                 <BsCartFill fontSize={"20px"} /> ADD TO CART
               </Text>
               <Text className="buyButton">
                 <BsLightningFill fontSize={"20px"} /> BUY NOW
               </Text>
             </Box>
+          </Box>
+          <Box>
+            <Text onClick={handleFavorite}>
+              <GrFavorite fontSize={"30px"} />
+            </Text>
           </Box>
         </Flex>
         <SingleProductDetails data={data} />

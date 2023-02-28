@@ -82,6 +82,11 @@ function Navbar() {
                     Dark mode {colorMode === "light" ? "Dark" : "Light"}
                   </Text>
                 </MenuItem>
+                <MenuItem>
+                  <Text>
+                    <Link to="/favourite">Favourite</Link>
+                  </Text>
+                </MenuItem>
               </MenuList>
             </Menu>
           </Center>
@@ -145,6 +150,11 @@ function Navbar() {
               <MenuItem>
                 <Text onClick={toggleColorMode}>
                   Dark mode {colorMode === "light" ? "Dark" : "Light"}
+                </Text>
+              </MenuItem>
+              <MenuItem>
+                <Text>
+                  <Link to="/favourite">Favourite</Link>
                 </Text>
               </MenuItem>
             </MenuList>
