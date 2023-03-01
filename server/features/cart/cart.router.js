@@ -16,7 +16,7 @@ const authMiddleware = async (req, res, next) => {
       res.status(500).send(e.message);
     }
   } else {
-    res.status(500).send("Something went wrong");
+    res.status(500).send("Login to your Account");
   }
 };
 
