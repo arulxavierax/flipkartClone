@@ -114,7 +114,7 @@ function SingleProduct() {
             </Box>
           </Box>
           <Box>
-            <Text onClick={handleFavorite}>
+            <Text style={{ cursor: "pointer" }} onClick={handleFavorite}>
               <GrFavorite fontSize={"30px"} />
             </Text>
           </Box>
