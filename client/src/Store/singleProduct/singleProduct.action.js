@@ -41,7 +41,7 @@ export const productAddCart = (id) => async (dispatch) => {
       return "Product added to cart";
     }
   } catch (e) {
-    return e.message;
+    return e.response.data;
   }
 };
 
@@ -59,6 +59,6 @@ export const productAddFavourite = (id) => async (dispatch) => {
       return "Product added to Favourite";
     }
   } catch (e) {
-    return e.message;
+    return e.response.data;
   }
 };

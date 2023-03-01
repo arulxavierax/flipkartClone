@@ -94,7 +94,7 @@ function Navbar() {
             <Text fontSize="16px" as="b" color={"white"}>
               <Flex gap={2}>
                 <BsCartFill fontSize={"20px"} />
-                <Link to="#"> Cart </Link>
+                <Link to="/cart"> Cart </Link>
               </Flex>
             </Text>
           </Center>
@@ -133,7 +133,7 @@ function Navbar() {
         </Flex>
         <Flex flexDir={"column"} align="center">
           <Text m={2} fontSize="16px" as="b">
-            <Link to="#">Login</Link>
+            <Login />
           </Text>
 
           <Text m={2} fontSize="16px" as="b">
@@ -163,7 +163,7 @@ function Navbar() {
           <Text m={2} fontSize="16px" as="b">
             <Flex>
               <BsCartFill fontSize={"20px"} />
-              <Link to="#"> Cart </Link>
+              <Link to="/cart"> Cart </Link>
             </Flex>
           </Text>
         </Flex>

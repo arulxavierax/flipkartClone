@@ -11,7 +11,7 @@ import {
 import "../App.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   getSingleProduct,
   productAddCart,
@@ -26,6 +26,7 @@ function SingleProduct() {
   const toast = useToast();
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { loading, error, data, images } = useSelector(
     (store) => store.singleProduct
   );
@@ -62,6 +63,7 @@ function SingleProduct() {
         })
       )
       .catch((err) => console.log(err));
+    navigate("/cart");
   };
 
   const handleFavorite = () => {
