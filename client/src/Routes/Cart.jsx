@@ -97,8 +97,8 @@ function Cart() {
             </Text>
           </Box>
           {data.length == 0 ? (
-            <Center h="300px">
-              <Image src="https://cdn.dribbble.com/users/12570/screenshots/13987694/media/1635918fab6854e489723a301619b7b2.jpg?compress=1&resize1000x900" />
+            <Center h="500px">
+              <Image src="https://assets.materialup.com/uploads/16e7d0ed-140b-4f86-9b7e-d9d1c04edb2b/preview.png" />
             </Center>
           ) : (
             data?.map((e) => (
@@ -250,11 +250,15 @@ function Cart() {
           </Box>
         </Box>
       </Box>
-      <Box width={"80%"} margin="auto" marginTop={5} display={"flex"}>
-        <Text className="cartButton" onClick={handleOrder}>
-          PLACE ORDER
-        </Text>
-      </Box>
+      {data.length > 0 ? (
+        <Box width={"80%"} margin="auto" marginTop={5} display={"flex"}>
+          <Text className="cartButton" onClick={handleOrder}>
+            PLACE ORDER
+          </Text>
+        </Box>
+      ) : (
+        ""
+      )}
     </Box>
   );
 }
