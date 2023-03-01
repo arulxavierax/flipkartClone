@@ -3,6 +3,7 @@ import {
   USER_LOGIN_ERROR,
   USER_LOGIN_LOADING,
   USER_LOGIN_SUCCESS,
+  USER_LOGOUT,
 } from "./user.types";
 import { loadData, saveData } from "./localstorage";
 
@@ -37,6 +38,13 @@ export const userReducer = (state = initialState, { type, payload }) => {
         error: false,
         token: token,
         sign: true,
+      };
+    }
+    case USER_LOGOUT: {
+      localStorage.removeItem("token");
+      return {
+        ...state,
+        sign: false,
       };
     }
     default:

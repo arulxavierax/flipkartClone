@@ -22,7 +22,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Register from "./Register";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../Store/User/user.action";
+import { userLogin, userLogout } from "../Store/User/user.action";
 
 const initialState = {
   email: "",
@@ -50,8 +50,7 @@ function Login() {
       .then((e) =>
         toast({
           title: [e],
-          position: "top-right",
-          variant: "left-accent",
+          status: "success",
           duration: 9000,
           isClosable: true,
         })
@@ -60,9 +59,19 @@ function Login() {
     onClose();
   };
 
+  const handleLogout = () => {
+    let item = dispatch(userLogout());
+    toast({
+      title: "Logged out successfully",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
+  };
+
   return (
     <Box>
-      <Button onClick={onOpen} borderRadius={"0px"}>
+      <Button onClick={token ? handleLogout : onOpen} borderRadius={"0px"}>
         {token ? "Logout" : "Login"}
       </Button>
 
