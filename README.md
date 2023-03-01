@@ -1,6 +1,6 @@
 # Flipkart Clone
 
-This is a clone of a website called Flipksrt which sell variety of products. it is a full stack application with both frontend and backend functionality made by myself.
+This is a clone of a website called Flipkart which sell variety of products. it is a full stack application with both frontend and backend functionality done by myself.
 
 [Frontend Deployed Link](https://flipkart-ten.vercel.app/)
 
