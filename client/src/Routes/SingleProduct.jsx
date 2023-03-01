@@ -63,7 +63,9 @@ function SingleProduct() {
         })
       )
       .catch((err) => console.log(err));
-    navigate("/cart");
+    setTimeout(() => {
+      navigate("/cart");
+    }, 2000);
   };
 
   const handleFavorite = () => {

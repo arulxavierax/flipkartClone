@@ -24,7 +24,6 @@ function Cart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { data, loading, error } = useSelector((store) => store.cart);
-  console.log(data);
   useEffect(() => {
     dispatch(getCart());
   }, [dispatch]);
@@ -61,7 +60,6 @@ function Cart() {
         el.quantity,
     0
   );
-  console.log(discount);
   let sum = data.reduce((acc, el) => acc + el.product.price * el.quantity, 0);
 
   const handleDelete = (id) => {
