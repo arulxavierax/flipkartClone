@@ -89,7 +89,11 @@ function Cart() {
 
   return (
     <Box paddingBottom={20}>
-      <Box justifyContent={"space-evenly"} display={"flex"} paddingTop={75}>
+      <Box
+        justifyContent={"space-evenly"}
+        display={["block", "block", "flex"]}
+        paddingTop={75}
+      >
         <Box width={"60%"}>
           <Box>
             <Text padding={"13px 24px"} color={"#878787"} fontSize={"16px"}>
@@ -190,7 +194,7 @@ function Cart() {
             ))
           )}
         </Box>
-        <Box width={"30%"}>
+        <Box width={"40%"}>
           <Box>
             <Text padding={"13px 24px"} color={"#878787"} fontSize={"16px"}>
               PRICE DETAILS
@@ -198,7 +202,7 @@ function Cart() {
           </Box>
           <Box
             p={3}
-            width={"70%"}
+            width={"80%"}
             justifyContent={"space-between"}
             display={"flex"}
           >
@@ -211,7 +215,7 @@ function Cart() {
           </Box>
           <Box
             p={3}
-            width={"70%"}
+            width={"80%"}
             justifyContent={"space-between"}
             display={"flex"}
           >
@@ -224,7 +228,7 @@ function Cart() {
           </Box>
           <Box
             p={3}
-            width={"70%"}
+            width={"80%"}
             justifyContent={"space-between"}
             display={"flex"}
           >
@@ -237,7 +241,7 @@ function Cart() {
           </Box>
           <Box
             p={3}
-            width={"70%"}
+            width={"80%"}
             justifyContent={"space-between"}
             display={"flex"}
           >
