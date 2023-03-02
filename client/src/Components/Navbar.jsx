@@ -87,6 +87,11 @@ function Navbar() {
                     <Link to="/favourite">Favourite</Link>
                   </Text>
                 </MenuItem>
+                <MenuItem>
+                  <Text>
+                    <Link to="/orders">Orders</Link>
+                  </Text>
+                </MenuItem>
               </MenuList>
             </Menu>
           </Center>
@@ -155,6 +160,11 @@ function Navbar() {
               <MenuItem>
                 <Text>
                   <Link to="/favourite">Favourite</Link>
+                </Text>
+              </MenuItem>
+              <MenuItem>
+                <Text>
+                  <Link to="/orders">Orders</Link>
                 </Text>
               </MenuItem>
             </MenuList>

@@ -5,10 +5,7 @@ import {
   Button,
   Center,
   Flex,
-  Grid,
-  GridItem,
   Image,
-  Link,
   Spinner,
   Text,
   useToast,
@@ -16,7 +13,12 @@ import {
 import { AiFillStar } from "react-icons/ai";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteCart, getCart, updateCart } from "../Store/cart/cart.action";
+import {
+  addToOrders,
+  deleteCart,
+  getCart,
+  updateCart,
+} from "../Store/cart/cart.action";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
@@ -85,13 +87,17 @@ function Cart() {
       isClosable: true,
     });
     navigate("/");
+    data.forEach((el) => {
+      dispatch(addToOrders(el.product._id, el.quantity));
+      dispatch(deleteCart(el.product._id));
+    });
   };
 
   return (
     <Box paddingBottom={20}>
       <Box
         justifyContent={"space-evenly"}
-        display={["block", "block", "flex"]}
+        display={["block", "flex", "flex"]}
         paddingTop={75}
       >
         <Box width={"60%"}>

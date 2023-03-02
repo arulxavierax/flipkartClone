@@ -55,3 +55,18 @@ export const deleteCart = (id) => async (dispatch) => {
     return e.response.data;
   }
 };
+
+export const addToOrders = (id, quantity) => (dispatch) => {
+  axios
+    .post(
+      "https://flipkartbackend-production.up.railway.app/orders",
+      { product: id, quantity },
+      config
+    )
+    .then((res) => {
+      console.log(res);
+    })
+    .catch((e) => {
+      console.log(e);
+    });
+};

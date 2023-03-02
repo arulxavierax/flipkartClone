@@ -67,6 +67,7 @@ function Login() {
       duration: 9000,
       isClosable: true,
     });
+    navigate("/");
   };
 
   return (
